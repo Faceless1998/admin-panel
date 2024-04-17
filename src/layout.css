@@ -1,0 +1,32 @@
+body{
+    background-color: lightgrey;
+}
+
+.layout {
+    width: 500px;
+    position: relative;
+}
+
+.layout button{
+    
+    width: 100%;
+    background-color: white;
+    border: none;
+}
+
+.sidebar{
+    background-color: white;
+    padding: 0 20px;
+}
+
+.sidebar ul{
+    list-style-type: none;
+}
+
+.sidebar ul li div{
+    display:none;
+}
+
+.sidebar.open ul li div{
+    display: inline;
+}
