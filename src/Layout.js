@@ -11,7 +11,7 @@ import { BiSolidBuildings } from "react-icons/bi";
 import { FaQuestion } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-import "./layout.css"
+import "./layout.css";
 export const Layout = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,21 +20,51 @@ export const Layout = () => {
   };
 
   return (
-    <div className={isOpen ? "layout opened" : "layout"}>
-      <button onClick={toggleSidebar}>
-        <GiHamburgerMenu />
-      </button>
-      <div className={isOpen ? "sidebar open" : "sidebar"}>
+    <div className={`layout ${isOpen ? "opened" : ""}`}>
+      <div className={`sidebar ${isOpen ? "open" : "small"}`}>
         <ul>
-        <li><MdDashboard /> <div> Dashboard </div> </li>
-        <li><MdPeopleAlt /> <div> People </div> </li>
-        <li><FaClipboardList /> <div> Project </div> </li>
-        <li><IoMdCalendar /> <div> Calendar </div> </li>
-        <li><PiPresentationFill /> <div> Training </div> </li>
-        <li><CgSandClock /> <div> Timesheet </div> </li>
-        <li><PiChatsFill /> <div> Reports </div> </li>
-        <li><BiSolidBuildings /> <div> Administration </div> </li>
-        <li><FaQuestion /> <div> Help </div> </li>
+          <li>
+            <button onClick={toggleSidebar} className="burger">
+              <GiHamburgerMenu />
+              <div>Menu</div>
+            </button>
+          </li>
+          <li>
+            <MdDashboard />
+            <div> Dashboard </div>
+          </li>
+          <li>
+            <MdPeopleAlt />
+            <div> People </div>
+          </li>
+          <li>
+            <FaClipboardList />
+            <div> Project </div>
+          </li>
+          <li>
+            <IoMdCalendar />
+            <div> Calendar </div>
+          </li>
+          <li>
+            <PiPresentationFill />
+            <div> Training </div>
+          </li>
+          <li>
+            <CgSandClock />
+            <div> Timesheet </div>
+          </li>
+          <li>
+            <PiChatsFill />
+            <div> Reports </div>
+          </li>
+          <li>
+            <BiSolidBuildings />
+            <div> Administration </div>
+          </li>
+          <li>
+            <FaQuestion />
+            <div> Help </div>
+          </li>
         </ul>
       </div>
     </div>

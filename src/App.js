@@ -1,9 +1,13 @@
 import { Layout } from "./Layout";
+import { Topbar } from "./Topbar";
 
 function App() {
   return (
     <>
-    <Layout />
+     <Topbar />
+      <section>
+        <Layout />
+      </section>
     </>
   );
 }

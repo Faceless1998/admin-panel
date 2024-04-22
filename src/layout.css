@@ -1,32 +1,86 @@
 body{
     background-color: lightgrey;
+    margin: 0;
 }
 
-.layout {
-    width: 500px;
-    position: relative;
+section{
+    display: flex;
 }
 
-.layout button{
-    
-    width: 100%;
+.layout.opened {
+    width: 300px;
+}
+
+.layout{
     background-color: white;
+    width: 90px;
+    padding: 20px 0;
+    position: relative;
+    transition: width 0.3s ease;
+}
+
+.layout.opened .sidebar{
+    width: calc(100%-40px);
+}
+
+.layout.opened .hamburger{
+    background-color: inherit;
+    margin-left: 100%;
+    width: 50px;
+}
+
+.burger{
+    background-color: inherit;
     border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 .sidebar{
-    background-color: white;
     padding: 0 20px;
+    transition: width 0.3s ease;
+    height: 100%;
+}
+
+.sidebar.small{
+    width: 50px;
 }
 
 .sidebar ul{
     list-style-type: none;
+    padding: 0;
 }
 
 .sidebar ul li div{
-    display:none;
+    display: none;
 }
 
 .sidebar.open ul li div{
     display: inline;
+    margin-left: 10px; /**/
+}
+
+.sidebar.open ul li{ /**/
+    padding: 10px; /**/
+    text-align: center; /**/
+    display: flex; /**/
+    align-items: center; /**/
+    cursor: pointer; /**/
+    margin-bottom: 20px; /**/
+    color: #333; /**/
+} /**/
+
+.sidebar ul li:not(.sidebar.open ul li){ /**/
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; /**/
+    cursor: pointer;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sidebar ul li:hover:not(:first-child) {
+background-color: #f0f0f0;
 }
