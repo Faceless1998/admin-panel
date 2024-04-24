@@ -1,6 +1,9 @@
 import { Layout } from "./Layout";
 import { Topbar } from "./Topbar";
 import ApexChart from "./ApexChart";
+import ApexRound from "./ApexRound";
+
+import "./app.css"
 function App() {
   return (
     <>
@@ -9,6 +12,7 @@ function App() {
         <Layout />
         <section>
           <ApexChart />
+          <ApexRound />
         </section>
       </section>
     </>
