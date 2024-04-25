@@ -3,7 +3,7 @@ import "./topbar.css";
 import { IoIosNotifications } from "react-icons/io";
 import { MdNotificationsActive } from "react-icons/md";
 import IMG from "./assets/image.jpeg";
-import AUDIO from "./assets/Allahu Akbar Sound Effect.mp3"
+
 export const Topbar = () => {
     const [notificationActive, setNotificationActive] = useState(false);
 
@@ -44,7 +44,7 @@ export const Topbar = () => {
 
             <div className='notification-bar'>
                 <button onClick={toggleNotification}>
-                    {notificationActive ? (<div><MdNotificationsActive /><audio src={AUDIO} autoPlay></audio></div>) : (<IoIosNotifications />)}
+                    {notificationActive ? (<div><MdNotificationsActive /></div>) : (<IoIosNotifications />)}
                 </button>
             </div>
         </div>
