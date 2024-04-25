@@ -1,33 +1,52 @@
-import React from 'react'
-import "./topbar.css"
-
-import IMG from "./assets/image.jpeg"
-
+import React, { useState } from 'react';
+import "./topbar.css";
+import { IoIosNotifications } from "react-icons/io";
+import { MdNotificationsActive } from "react-icons/md";
+import IMG from "./assets/image.jpeg";
+import AUDIO from "./assets/Allahu Akbar Sound Effect.mp3"
 export const Topbar = () => {
-const usernames = [
-    {
-        id:1,
-        username: "kakhi",
-        image:IMG
-    }
-]
+    const [notificationActive, setNotificationActive] = useState(false);
 
-  return (
-    <div className='topbar'>
-        <div className='username'>
-            <div className='user-image'>
-            {usernames.map((user) =>(
-                <div key={user.id}>
-                    <img src={user.image} alt={user.username} key={user.id} />
+    const toggleNotification = () => {
+        console.log("Button clicked"); // Debugging
+        setNotificationActive(prevState => !prevState);
+    };
+
+    const usernames = [
+        {
+            id: 1,
+            username: "kakhi",
+            image: IMG
+        }
+    ];
+
+    return (
+        <div className='topbar'>
+            <div className='username'>
+                <div className='user-image'>
+                    {usernames.map((user) => (
+                        <div key={user.id}>
+                            <img src={user.image} alt={user.username} />
+                        </div>
+                    ))}
                 </div>
-            ))}
+                <div className='user-title'>
+                    {usernames.map((user) => (
+                        <div key={user.id}>{user.username}</div>
+                    ))}
+                </div>
             </div>
-            <div className='user-title'>
-            {usernames.map((user) =>(
-                <div key={user.id}>{user.username}</div>
-            ))}
+
+            <div className='searchbar'>
+                <div className='search-icon'></div>
+                <input type='text' />
+            </div>
+
+            <div className='notification-bar'>
+                <button onClick={toggleNotification}>
+                    {notificationActive ? (<div><MdNotificationsActive /><audio src={AUDIO} autoPlay></audio></div>) : (<IoIosNotifications />)}
+                </button>
             </div>
         </div>
-    </div>
-  )
-}
+    );
+};

@@ -3,6 +3,8 @@
     margin-bottom: 5px;
     background-color: white;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 .username{

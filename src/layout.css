@@ -2,9 +2,12 @@ body{
     background-color: lightgrey;
     margin: 0;
 }
-
+.unic-class{
+    flex-wrap: nowrap
+}
 section{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .layout.opened {
