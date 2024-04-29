@@ -4,7 +4,7 @@ import ApexChart from "./ApexChart";
 import ApexRound from "./ApexRound";
 import ApexLine from "./ApexLine";
 import "./app.css";
-
+import WidgetContainer from "./WidgetContainer";
 function App() {
   return (
     <>
@@ -17,6 +17,7 @@ function App() {
           <ApexLine />
         </section>
       </section>
+      <WidgetContainer />
     </>
   );
 }
