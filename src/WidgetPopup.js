@@ -1,17 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./WidgetPopup.css";
 import { FaCheck } from "react-icons/fa6";
 import { MdOutlineClose } from "react-icons/md";
+import CalendarWidget from "./CalendarWidget";
 
 const WidgetPopup = ({ onClose, onSelectWidget }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpenWidget = () => {
+useEffect(() => {
+  const storedState = localStorage.getItem("widgetopen");
+  if(storedState === "true"){
     setIsOpen(true);
+    onSelectWidget(
+      <CalendarWidget isOpen={true} onClose={() => setIsOpen(false)}/>
+    )
+  }
+})
+const handleOpenWidget = () => {
+    setIsOpen(true);
+    localStorage.setItem("widgetopen","true");
+    onSelectWidget(
+      <CalendarWidget isOpen={true} onClose={() => setIsOpen(false)}/>
+    );
   };
 
   const handleCloseWidget = () => {
     setIsOpen(false);
+    localStorage.removeItem("widgetopen");
+    onSelectWidget(null);
   };
 
   return (

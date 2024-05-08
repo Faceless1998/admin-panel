@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import RoundGreenButton from './RoundGreenButton'
+import React, { useState } from 'react';
+import RoundGreenButton from './RoundGreenButton';
 import WidgetPopup from './WidgetPopup';
 
 const WidgetContainer = () => {
