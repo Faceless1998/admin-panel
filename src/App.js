@@ -7,18 +7,8 @@ import "./app.css";
 import WidgetContainer from "./WidgetContainer";
 function App() {
   return (
-    <>
-     <Topbar />
-      <section className="unic-class">
-        <Layout />
-        <section>
-          <ApexChart />
-          <ApexRound />
-          <ApexLine />
-        </section>
-      </section>
-      <WidgetContainer />
-    </>
+  <>
+  </>
   );
 }
 
